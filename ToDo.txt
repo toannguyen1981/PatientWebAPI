@@ -1,0 +1,27 @@
+﻿need to mass sensitive fields if logging parameters
+
+I kept the generated DB fields from Entity Framework as is; ideally, for string fields should be nvarhcar with a length instead of nvarchar(max)
+
+I modified database field names for better naming convention
+
+create a function to validate token instead of just checking for null/empty
+
+due to identity column configured with EF, had to resort to set the id property in PatientLabVisit to null
+
+already set all tables with foreign keys on delete cascade on if a record from the master table (PatientDetails) is deleted
+
+unable to test other external endpoints, had to resort to using the same endpoint GetLabVisit 3X for the concurrent api calls requirement
+
+added 1 function annotation need to do the rest
+
+need to add comments to long logic
+
+need to refine caching settings to be more dynamic
+
+need to add retry mechanism. Will increase round trip time. Depending on the criticality of the request. If the request is asynchronous then add the request to a queue instead.
+
+need to add authentication to web api
+
+need to add unit testing
+
+encrypt pw in appsettings.json
